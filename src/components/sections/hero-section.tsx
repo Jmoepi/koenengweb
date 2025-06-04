@@ -12,7 +12,7 @@ const HeroSection = () => {
               Koeneng Hub
             </h1>
             <p className="mt-4 font-headline text-xl sm:text-2xl text-foreground">
-              Youth-led. Tech-Driven. Future-Ready.
+              Where Youthful Energy Meets Intelligent Tech.
             </p>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
               Empowering the next generation with technology and innovation to shape a brighter tomorrow. Join us in building a future where potential meets opportunity.
@@ -26,7 +26,7 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-square max-w-md mx-auto md:max-w-none">
+          <div className="relative aspect-square max-w-md mx-auto md:max-w-none transition-transform duration-300 ease-in-out hover:scale-105">
             <Image 
               src="https://placehold.co/600x600.png" 
               alt="Koeneng Hub concept image" 

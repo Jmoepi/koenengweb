@@ -12,7 +12,7 @@ const SiteFooter = () => {
               <Logo className="h-8 w-8 text-primary" />
               <span className="font-headline text-xl font-semibold text-primary">Koeneng Hub</span>
             </Link>
-            <p className="text-sm text-muted-foreground text-center md:text-left">Youth-led. Tech-Driven. Future-Ready.</p>
+            <p className="text-sm text-muted-foreground text-center md:text-left">Where Youthful Energy Meets Intelligent Tech.</p>
           </div>
           
           <div className="text-center text-sm text-muted-foreground">

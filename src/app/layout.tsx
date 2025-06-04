@@ -6,7 +6,7 @@ import SiteFooter from '@/components/layout/site-footer';
 
 export const metadata: Metadata = {
   title: 'Koeneng Hub - Youth-led. Tech-Driven. Future-Ready.',
-  description: 'Koeneng Hub is a youth-led organization fostering tech innovation and growth.',
+  description: 'Koeneng Hub: Where Youthful Energy Meets Intelligent Tech. We empower youth with cutting-edge AI and technology to solve real-world problems and shape the future.',
 };
 
 export default function RootLayout({

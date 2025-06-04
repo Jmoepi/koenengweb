@@ -23,7 +23,7 @@ const AboutSection = () => {
               At Koeneng Hub, we're not just preparing youth for the future; we're empowering them to build it.
             </p>
           </div>
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
             <Image 
               src="https://placehold.co/600x400.png" 
               alt="Diverse group of young people collaborating on tech projects" 
