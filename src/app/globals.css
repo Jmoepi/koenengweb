@@ -8,94 +8,94 @@ body {
 
 @layer base {
   :root {
-    --background: 60 56% 91%; /* #F5F5DC light beige */
-    --foreground: 220 15% 25%; /* Dark blue-grey for text */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222 47% 11%; /* Dark Blue (like slate-900) */
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 220 15% 25%; /* Dark blue-grey for text on cards */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222 47% 11%; /* Dark Blue */
 
-    --popover: 0 0% 100%; /* White popovers */
-    --popover-foreground: 220 15% 25%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222 47% 11%; /* Dark Blue */
 
-    --primary: 120 61% 34%; /* #228B22 deep forest green */
-    --primary-foreground: 60 100% 97%; /* Very light, off-white for text on primary */
+    --primary: 217 91% 60%; /* Vibrant Blue (like blue-500) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 120 20% 88%; /* Muted, light green-grey */
-    --secondary-foreground: 120 61% 20%; /* Darker green for text on secondary */
+    --secondary: 210 40% 96%; /* Very Light Blue (like blue-100) */
+    --secondary-foreground: 217 91% 50%; /* Medium Blue */
 
-    --muted: 60 30% 85%; /* Muted beige, slightly darker than background */
-    --muted-foreground: 60 15% 40%; /* Softer grey text */
+    --muted: 220 14% 96%; /* Very Light Gray (like slate-100) */
+    --muted-foreground: 220 9% 46%; /* Medium Gray (like slate-500) */
 
-    --accent: 120 61% 50%; /* #32CD32 electric lime */
-    --accent-foreground: 120 60% 10%; /* Dark green/black for text on accent */
+    --accent: 217 91% 65%; /* Slightly Brighter Blue */
+    --accent-foreground: 0 0% 100%; /* White */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Default destructive red */
+    --destructive-foreground: 0 0% 98%; /* Default destructive foreground */
 
-    --border: 60 30% 80%; /* Subtle borders for elements on light beige */
-    --input: 60 40% 95%; /* Lighter beige for inputs for slight contrast with background */
-    --ring: 120 61% 45%; /* Ring color, related to accent or primary */
+    --border: 220 13% 91%; /* Light Gray Border (like slate-200) */
+    --input: 210 40% 98%; /* Very Pale Blue for input background */
+    --ring: 217 91% 60%; /* Primary Blue for focus rings */
 
-    --chart-1: 120 61% 34%; /* primary */
-    --chart-2: 120 61% 50%; /* accent */
-    --chart-3: 120 20% 88%; /* secondary */
-    --chart-4: 60 30% 85%;  /* muted */
-    --chart-5: 220 15% 25%; /* foreground */
+    --chart-1: 217 91% 60%; /* primary */
+    --chart-2: 217 91% 65%; /* accent */
+    --chart-3: 200 80% 70%; /* light sky blue */
+    --chart-4: 220 60% 75%;  /* soft lavender blue */
+    --chart-5: 222 47% 11%; /* foreground */
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%; /* White */
+    --sidebar-foreground: 222 47% 11%; /* Dark Blue */
+    --sidebar-primary: 217 91% 60%; /* Primary Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 210 40% 96%; /* Very Light Blue */
+    --sidebar-accent-foreground: 217 91% 50%; /* Medium Blue */
+    --sidebar-border: 220 13% 91%; /* Light Gray Border */
+    --sidebar-ring: 217 91% 60%; /* Primary Blue */
   }
 
   .dark {
-    --background: 120 10% 10%; 
-    --foreground: 60 56% 91%; 
+    --background: 222 47% 11%; /* Dark Blue (like slate-900) */
+    --foreground: 0 0% 98%; /* Almost White (like slate-50) */
 
-    --card: 120 10% 15%; 
-    --card-foreground: 60 56% 91%;
+    --card: 222 47% 14%; /* Slightly Lighter Dark Blue for cards */
+    --card-foreground: 0 0% 98%; /* Almost White */
 
-    --popover: 120 10% 15%;
-    --popover-foreground: 60 56% 91%;
+    --popover: 222 47% 14%; /* Slightly Lighter Dark Blue for popovers */
+    --popover-foreground: 0 0% 98%; /* Almost White */
 
-    --primary: 120 61% 50%; 
-    --primary-foreground: 120 60% 10%; 
+    --primary: 217 91% 60%; /* Vibrant Blue */
+    --primary-foreground: 222 47% 11%; /* Dark Blue text on primary */
 
-    --secondary: 120 20% 25%; 
-    --secondary-foreground: 120 30% 70%; 
+    --secondary: 215 28% 17%; /* Darker Blue (like slate-800) */
+    --secondary-foreground: 0 0% 98%; /* Almost White text on secondary */
 
-    --muted: 120 10% 20%; 
-    --muted-foreground: 120 15% 55%; 
+    --muted: 215 20% 25%; /* Even Darker Blue/Gray (like slate-700) */
+    --muted-foreground: 215 14% 65%; /* Lighter Gray (like slate-400) */
 
-    --accent: 120 61% 34%; 
-    --accent-foreground: 60 100% 97%; 
+    --accent: 217 91% 65%; /* Brighter Blue Accent */
+    --accent-foreground: 222 47% 11%; /* Dark Blue text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%; /* Default dark destructive red */
+    --destructive-foreground: 0 0% 98%; /* Default dark destructive foreground */
 
-    --border: 120 10% 25%; 
-    --input: 120 10% 22%; 
-    --ring: 120 61% 55%; 
+    --border: 215 28% 22%; /* Darker Border (like slate-700/slate-800 boundary) */
+    --input: 215 28% 17%; /* Darker Blue for input (slate-800) */
+    --ring: 217 91% 60%; /* Primary Blue for focus rings */
 
-    --chart-1: 120 61% 50%; /* primary (dark) */
-    --chart-2: 120 61% 34%; /* accent (dark) */
-    --chart-3: 120 20% 25%; /* secondary (dark) */
-    --chart-4: 120 10% 20%; /* muted (dark) */
-    --chart-5: 60 56% 91%;  /* foreground (dark) */
+    --chart-1: 217 91% 60%; /* primary */
+    --chart-2: 217 91% 65%; /* accent */
+    --chart-3: 200 70% 55%; /* medium distinct blue */
+    --chart-4: 220 50% 60%;  /* medium lavender blue */
+    --chart-5: 0 0% 98%;  /* foreground (light/white) */
     
-    --sidebar-background: 120 10% 12%;
-    --sidebar-foreground: 60 50% 85%;
-    --sidebar-primary: 120 61% 50%;
-    --sidebar-primary-foreground: 120 60% 10%;
-    --sidebar-accent: 120 10% 20%;
-    --sidebar-accent-foreground: 60 50% 85%;
-    --sidebar-border: 120 10% 25%;
-    --sidebar-ring: 120 61% 55%;
+    --sidebar-background: 222 47% 11%; /* Dark Blue */
+    --sidebar-foreground: 0 0% 98%; /* Almost White */
+    --sidebar-primary: 217 91% 60%; /* Primary Blue */
+    --sidebar-primary-foreground: 222 47% 11%; /* Dark Blue */
+    --sidebar-accent: 215 28% 17%; /* Darker Blue Accent */
+    --sidebar-accent-foreground: 0 0% 98%; /* Almost White */
+    --sidebar-border: 215 28% 22%; /* Darker Border */
+    --sidebar-ring: 217 91% 60%; /* Primary Blue */
   }
 }
 
