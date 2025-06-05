@@ -8,10 +8,6 @@ const HeroSection = () => {
     <section id="home" className="py-16 md:py-24 bg-gradient-to-br from-background to-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center items-center relative aspect-square max-w-xs sm:max-w-sm md:max-w-md mx-auto md:mx-0 transition-transform duration-300 ease-in-out hover:scale-105">
-            <SpinningGlobe className="w-full h-full" />
-            <div className="absolute inset-0 bg-primary/10 rounded-full pointer-events-none -z-10 scale-90"></div>
-          </div>
           <div className="text-center md:text-left">
             <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-bold text-primary tracking-tight">
               Koeneng Hub
@@ -30,6 +26,10 @@ const HeroSection = () => {
                 <Link href="/#contact">Get in Touch</Link>
               </Button>
             </div>
+          </div>
+          <div className="flex justify-center items-center relative aspect-square max-w-xs sm:max-w-sm md:max-w-md mx-auto md:mx-0 transition-transform duration-300 ease-in-out hover:scale-105 order-first md:order-last">
+            <SpinningGlobe className="w-full h-full" />
+            <div className="absolute inset-0 bg-primary/10 rounded-full pointer-events-none -z-10 scale-90"></div>
           </div>
         </div>
       </div>
