@@ -25,11 +25,11 @@ const AboutSection = () => {
           </div>
           <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
             <Image 
-              src="https://placehold.co/600x400.png" 
-              alt="Diverse group of young people collaborating on tech projects" 
+              src="https://firebasestudio.googleapis.com/v0/b/react-creator-c1119.appspot.com/o/images%2F2wP0560cR5%2F271948a4-0344-4673-bc2a-5ab07e2115e6.png?alt=media&token=9776f4aa-f0a0-46ea-a7e7-5c1130371999"
+              alt="Two young individuals coding on laptops amidst clouds, symbolizing innovation" 
               fill
               className="object-cover"
-              data-ai-hint="collaboration teamwork youth"
+              data-ai-hint="coding innovation"
             />
           </div>
         </div>
