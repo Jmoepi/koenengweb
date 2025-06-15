@@ -5,13 +5,13 @@ import Link from 'next/link';
 
 const teamMembers = [
   {
-    name: "Lerato Khumalo",
+    name: "Selebalo Moepi",
     role: "CEO & Founder",
-    image: "https://placehold.co/300x300.png",
+    image: "https://firebasestudio.googleapis.com/v0/b/react-creator-c1119.appspot.com/o/images%2F2wP0560cR5%2F9978a5d0-f4b9-4dd1-8351-d1664a1d27d0.png?alt=media&token=a06e1e9e-4c2c-4582-961e-c1d59dd01ae6",
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
     linkedin: "#",
     twitter: "#",
-    aiHint: "professional woman portrait"
+    aiHint: "man graduation"
   },
   {
     name: "Thabo Mbeki Jr.",
