@@ -1,17 +1,19 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
+// import selebaloMoepiImage from '@/components/image/selebalo-moepi.png'; // Temporarily commented out
 
 const teamMembers = [
   {
-    name: "Lerato Khumalo",
+    name: "Selebalo Moepi",
     role: "CEO & Founder",
-    image: "https://placehold.co/300x300.png",
+    image: "https://placehold.co/300x300.png", // Reverted to placeholder
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
     linkedin: "#",
     twitter: "#",
-    aiHint: "professional woman portrait"
+    aiHint: "man portrait leader" // Updated AI hint for placeholder
   },
   {
     name: "Thabo Mbeki Jr.",
@@ -47,10 +49,14 @@ const TeamSection = () => {
               <CardHeader className="p-0">
                 <div className="relative w-full h-64 bg-muted">
                   <Image
-                    src={member.image}
+                    src={member.image} // This will now use the placeholder for Selebalo Moepi
                     alt={member.name}
                     fill
                     className="object-cover"
+                    // For local static images, 'placeholder="blur"' requires the import.
+                    // For remote images (like placehold.co), blur placeholders are not automatically generated without more complex setup.
+                    // So, we remove it for now for the placeholder.
+                    // placeholder={typeof member.image === 'string' && member.image.startsWith('/') ? 'blur' : undefined}
                     data-ai-hint={member.aiHint}
                   />
                 </div>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import pic1Image from '@/components/image/pic1.jpg';
 
 const AboutSection = () => {
   return (
@@ -24,12 +25,13 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
-            <Image 
-              src="https://placehold.co/600x400.png" 
-              alt="Diverse group of young people collaborating on tech projects" 
+            <Image
+              src={pic1Image}
+              alt="Two young individuals coding on laptops amidst clouds, symbolizing innovation"
               fill
               className="object-cover"
-              data-ai-hint="collaboration teamwork youth"
+              placeholder="blur"
+              data-ai-hint="coding innovation"
             />
           </div>
         </div>

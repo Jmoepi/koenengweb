@@ -22,8 +22,8 @@ const ContactSection = () => {
                 <Mail size={24} className="text-primary mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-foreground">Email</h4>
-                  <a href="mailto:info@koenenghub.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    info@koenenghub.com
+                  <a href="mailto:koenenghub@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    koenenghub@gmail.com
                   </a>
                 </div>
               </div>
@@ -31,8 +31,8 @@ const ContactSection = () => {
                 <Phone size={24} className="text-primary mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-foreground">Phone</h4>
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                    +123 456 7890
+                  <a href="tel:+27661519713" className="text-muted-foreground hover:text-primary transition-colors">
+                    +27 66 151 9713
                   </a>
                 </div>
               </div>
@@ -40,7 +40,7 @@ const ContactSection = () => {
                 <MapPin size={24} className="text-primary mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-foreground">Address</h4>
-                  <p className="text-muted-foreground">123 Tech Avenue, Innovation City, Gauteng, South Africa</p>
+                  <p className="text-muted-foreground">Cosmo City, Johannesburg, Gauteng, South Africa</p>
                 </div>
               </div>
             </div>
