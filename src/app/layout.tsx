@@ -1,12 +1,28 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
+import { Poppins, PT_Sans } from 'next/font/google';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from '@/components/ui/toaster';
 import SiteHeader from '@/components/layout/site-header';
 import SiteFooter from '@/components/layout/site-footer';
 
+const fontHeadline = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '600', '700'],
+  variable: '--font-headline',
+});
+
+const fontBody = PT_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+  variable: '--font-body',
+});
+
 export const metadata: Metadata = {
   title: 'Koeneng Hub - Youth-led. Tech-Driven. Future-Ready.',
-  description: 'Koeneng Hub: Where Youthful Energy Meets Intelligent Tech. We empower youth with cutting-edge AI and technology to solve real-world problems and shape the future.',
+  description:
+    'Koeneng Hub: Where Youthful Energy Meets Intelligent Tech. We empower youth with cutting-edge AI and technology to solve real-world problems and shape the future.',
 };
 
 export default function RootLayout({
@@ -15,18 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${fontHeadline.variable} ${fontBody.variable}`}
+    >
       <body className="font-body antialiased min-h-screen flex flex-col">
         <SiteHeader />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <SiteFooter />
         <Toaster />
       </body>
