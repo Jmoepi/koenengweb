@@ -8,7 +8,7 @@ import samImage from '@/components/image/sam.jpg';
 const teamMembers = [
   {
     name: "Selebalo Moepi",
-    role: "CEO & Founder",
+    role: "CEO and  Vibe Coder😂",
     image: selebaloMoepiImage,
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
     linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
@@ -17,7 +17,7 @@ const teamMembers = [
   },
   {
     name: "Relebohile Boleke",
-    role: "Director and Head of Technology",
+    role: "Director and Head of Technology😎",
     image: samImage,
     bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
     linkedin: "#",
