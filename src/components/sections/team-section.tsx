@@ -2,26 +2,27 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
-import selebaloMoepiImage from '@/components/image/selebalo-moepi.jpg';
+import { Mail } from 'lucide-react';
 import samImage from '@/components/image/sam.jpg';
+import selebaloMopeiImage from '@/components/image/moepi.jpg';
 
 const teamMembers = [
   {
     name: "Selebalo Moepi",
-    role: "CEO & Founder",
-    image: selebaloMoepiImage,
+    role: "Director and Cloud Developer",
+    image: selebaloMopeiImage,
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
     linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
-    twitter: "#",
+    email: "jeffreymoepi@gmail.com", // Replace with actual email
     aiHint: "man portrait leader"
   },
   {
     name: "Relebohile Boleke",
-    role: "Director and Head of Technology",
+    role: "Director and Software Developer",
     image: samImage,
     bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/relebohile-samuel-boleke-58970a1b2/",
+    email: "releboleke@gmail.com", // Replace with actual email
     aiHint: "professional man portrait"
   },
 ];
@@ -57,8 +58,8 @@ const TeamSection = () => {
                   <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn Profile`}>
                     <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                   </Link>
-                  <Link href={member.twitter} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} Twitter Profile`}>
-                    <Twitter className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                  <Link href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+                    <Mail className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                   </Link>
                 </div>
               </CardContent>
