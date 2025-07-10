@@ -1,37 +1,28 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
-// import selebaloMoepiImage from '@/components/image/selebalo-moepi.png'; // Temporarily commented out
+import selebaloMoepiImage from '@/components/image/selebalo-moepi.jpg';
+import samImage from '@/components/image/sam.jpg';
 
 const teamMembers = [
   {
     name: "Selebalo Moepi",
     role: "CEO & Founder",
-    image: "https://placehold.co/300x300.png", // Reverted to placeholder
+    image: selebaloMoepiImage,
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
     twitter: "#",
-    aiHint: "man portrait leader" // Updated AI hint for placeholder
+    aiHint: "man portrait leader"
   },
   {
-    name: "Thabo Mbeki Jr.",
-    role: "Head of Technology",
-    image: "https://placehold.co/300x300.png",
+    name: "Relebohile Boleke",
+    role: "Director and Head of Technology",
+    image: samImage,
     bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
     linkedin: "#",
     twitter: "#",
     aiHint: "professional man portrait"
-  },
-  {
-    name: "Aisha Ibrahim",
-    role: "Community & Partnerships Lead",
-    image: "https://placehold.co/300x300.png",
-    bio: "Passionate advocate for youth development, building strong communities and strategic alliances.",
-    linkedin: "#",
-    twitter: "#",
-    aiHint: "professional woman smiling"
   },
 ];
 
@@ -43,20 +34,17 @@ const TeamSection = () => {
           <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary">Meet Our Team</h2>
           <p className="mt-2 text-lg text-muted-foreground">The Driving Force Behind Koeneng Hub</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-lg mx-auto justify-items-center items-center">
           {teamMembers.map((member, index) => (
             <Card key={index} className="text-center overflow-hidden hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1">
               <CardHeader className="p-0">
                 <div className="relative w-full h-64 bg-muted">
                   <Image
-                    src={member.image} // This will now use the placeholder for Selebalo Moepi
+                    src={member.image}
                     alt={member.name}
                     fill
                     className="object-cover"
-                    // For local static images, 'placeholder="blur"' requires the import.
-                    // For remote images (like placehold.co), blur placeholders are not automatically generated without more complex setup.
-                    // So, we remove it for now for the placeholder.
-                    // placeholder={typeof member.image === 'string' && member.image.startsWith('/') ? 'blur' : undefined}
+                    placeholder={typeof member.image !== 'string' ? 'blur' : undefined}
                     data-ai-hint={member.aiHint}
                   />
                 </div>
