@@ -1,14 +1,13 @@
 
 "use client";
 
-import { useEffect, useRef, useActionState } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { z } from 'zod';
 
 import { contactSchema } from '@/lib/schemas';
-import { submitContactForm, type ContactFormState } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -19,21 +18,17 @@ import { Loader2 } from 'lucide-react';
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full">
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      {pending ? 'Sending...' : 'Send Message'}
-    </Button>
-  );
-}
-
 const ContactForm = () => {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [state, formAction] = useActionState<ContactFormState | null, FormData>(submitContactForm, null);
+  // IMPORTANT: Replace these with your actual EmailJS credentials
+  // You can find these in your EmailJS account dashboard.
+  // It's recommended to use environment variables for security.
+  const emailJsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+  const emailJsTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+  const emailJsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -44,42 +39,47 @@ const ContactForm = () => {
     },
   });
 
-  useEffect(() => {
-    if (state?.success) {
-      toast({
-        title: 'Message Sent!',
-        description: state.message,
-      });
-      form.reset();
-      formRef.current?.reset(); // Ensure native form also resets if needed
-    } else if (state?.message && !state.success) {
-       // Field errors are handled by react-hook-form
-       // This handles general form errors
-      if(state.errors?._form) {
+  const onSubmit = () => {
+    if (!formRef.current) return;
+    if (!emailJsServiceId || !emailJsTemplateId || !emailJsPublicKey || emailJsServiceId === 'YOUR_SERVICE_ID') {
         toast({
-          title: 'Error',
-          description: state.errors._form.join(', '),
-          variant: 'destructive',
+            title: 'Configuration Error',
+            description: "EmailJS is not configured. Please add your credentials.",
+            variant: 'destructive',
         });
-      } else if (state.message && !state.errors) { // General message without field errors
-         toast({
-          title: 'Error',
-          description: state.message,
-          variant: 'destructive',
-        });
-      }
+        return;
     }
-  }, [state, toast, form]);
-  
-  useEffect(() => {
-    if (state?.errors) {
-      const errors = state.errors;
-      if (errors.name) form.setError('name', { type: 'server', message: errors.name.join(', ') });
-      if (errors.email) form.setError('email', { type: 'server', message: errors.email.join(', ') });
-      if (errors.message) form.setError('message', { type: 'server', message: errors.message.join(', ') });
-    }
-  }, [state, form]);
 
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm(emailJsServiceId, emailJsTemplateId, formRef.current, {
+        publicKey: emailJsPublicKey,
+      })
+      .then(
+        () => {
+          toast({
+            title: 'Message Sent!',
+            description: "Thank you for your message! We'll get back to you soon.",
+          });
+          form.reset();
+          if(formRef.current) {
+            formRef.current.reset();
+          }
+        },
+        (error) => {
+          console.error('EmailJS Error:', error);
+          toast({
+            title: 'Error',
+            description: `Failed to send message: ${error.text}`,
+            variant: 'destructive',
+          });
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
 
   return (
     <Card className="shadow-lg">
@@ -88,13 +88,14 @@ const ContactForm = () => {
         <CardDescription>Fill out the form below and we'll get back to you.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form ref={formRef} action={formAction} onSubmit={form.handleSubmit(() => formRef.current?.requestSubmit())} className="space-y-6">
+        <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <Label htmlFor="name">Full Name</Label>
             <Input
               id="name"
               type="text"
               {...form.register('name')}
+              name="name" // EmailJS needs the name attribute
               className="mt-1"
               aria-invalid={form.formState.errors.name ? "true" : "false"}
             />
@@ -109,6 +110,7 @@ const ContactForm = () => {
               id="email"
               type="email"
               {...form.register('email')}
+              name="email" // EmailJS needs the name attribute
               className="mt-1"
               aria-invalid={form.formState.errors.email ? "true" : "false"}
             />
@@ -122,6 +124,7 @@ const ContactForm = () => {
             <Textarea
               id="message"
               {...form.register('message')}
+              name="message" // EmailJS needs the name attribute
               rows={5}
               className="mt-1"
               aria-invalid={form.formState.errors.message ? "true" : "false"}
@@ -131,13 +134,10 @@ const ContactForm = () => {
             )}
           </div>
           
-          {state?.errors?._form && (
-            <p className="text-sm font-medium text-destructive">
-              {state.errors._form.join(', ')}
-            </p>
-          )}
-
-          <SubmitButton />
+          <Button type="submit" disabled={isSubmitting} className="w-full">
+            {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
         </form>
       </CardContent>
     </Card>
