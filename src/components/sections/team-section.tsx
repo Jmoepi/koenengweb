@@ -10,7 +10,7 @@ const teamMembers = [
     role: "CEO & Founder",
     image: selebaloMoepiImage,
     bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
     twitter: "#",
     aiHint: "man portrait leader"
   },
