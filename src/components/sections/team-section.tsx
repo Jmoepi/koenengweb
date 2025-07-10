@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import selebaloMoepiImage from '@/components/image/selebalo-moepi.jpg';
+import samImage from '@/components/image/sam.jpg';
 
 const teamMembers = [
   {
@@ -17,20 +18,11 @@ const teamMembers = [
   {
     name: "Relebohile Boleke",
     role: "Director and Head of Technology",
-    image: "https://placehold.co/300x300.png",
+    image: samImage,
     bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
     linkedin: "#",
     twitter: "#",
     aiHint: "professional man portrait"
-  },
-  {
-    name: "God",
-    role: "The creator",
-    image: "https://placehold.co/300x300.png",
-    bio: "Passionate advocate for youth development, building strong communities and strategic alliances.",
-    linkedin: "#",
-    twitter: "#",
-    aiHint: "professional woman smiling"
   },
 ];
 
@@ -42,7 +34,7 @@ const TeamSection = () => {
           <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary">Meet Our Team</h2>
           <p className="mt-2 text-lg text-muted-foreground">The Driving Force Behind Koeneng Hub</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-lg mx-auto justify-items-center items-center">
           {teamMembers.map((member, index) => (
             <Card key={index} className="text-center overflow-hidden hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1">
               <CardHeader className="p-0">
