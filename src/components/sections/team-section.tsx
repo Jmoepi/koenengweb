@@ -9,22 +9,22 @@ import selebaloMopeiImage from '@/components/image/moepi.jpg';
 const teamMembers = [
   {
     name: "Selebalo Moepi",
-    role: "Director and Cloud Developer",
+    role: "Director and Software Developer",
     image: selebaloMopeiImage,
-    bio: "Visionary leader driving Koeneng Hub's mission to empower Africa's youth through technology.",
+    bio: "Visionary leader driving Koeneng Hub's mission to empower youth through technology.",
     linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
     email: "jeffreymoepi@gmail.com", // Replace with actual email
     aiHint: "man portrait leader"
   },
-  {
-    name: "Relebohile Boleke",
-    role: "Director and Software Developer",
-    image: samImage,
-    bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
-    linkedin: "https://www.linkedin.com/in/relebohile-samuel-boleke-58970a1b2/",
-    email: "releboleke@gmail.com", // Replace with actual email
-    aiHint: "professional man portrait"
-  },
+  // {
+  //   name: "Relebohile Boleke",
+  //   role: "Director and Software Developer",
+  //   image: samImage,
+  //   bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
+  //   linkedin: "https://www.linkedin.com/in/relebohile-samuel-boleke-58970a1b2/",
+  //   email: "releboleke@gmail.com", // Replace with actual email
+  //   aiHint: "professional man portrait"
+  // },
 ];
 
 const TeamSection = () => {
