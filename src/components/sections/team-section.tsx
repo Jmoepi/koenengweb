@@ -1,74 +1,63 @@
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
 import samImage from '@/components/image/sam.jpg';
 import selebaloMopeiImage from '@/components/image/moepi.jpg';
 
 const teamMembers = [
-  {
-    name: "Selebalo Moepi",
-    role: "Director and Software Developer",
-    image: selebaloMopeiImage,
-    bio: "Visionary leader driving Koeneng Hub's mission to empower youth through technology.",
-    linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
-    email: "jeffreymoepi@gmail.com", // Replace with actual email
-    aiHint: "man portrait leader"
-  },
-  // {
-  //   name: "Relebohile Boleke",
-  //   role: "Director and Software Developer",
-  //   image: samImage,
-  //   bio: "Innovative technologist spearheading Koeneng Hub's tech initiatives and platform development.",
-  //   linkedin: "https://www.linkedin.com/in/relebohile-samuel-boleke-58970a1b2/",
-  //   email: "releboleke@gmail.com", // Replace with actual email
-  //   aiHint: "professional man portrait"
-  // },
+    {
+        name: "Selebalo Moepi",
+        role: "Director & Lead Developer",
+        image: selebaloMopeiImage,
+        bio: "The visionary architect of our future. Selebalo doesn't just write code; he composes symphonies of logic that power our innovative solutions. His leadership is the compass that guides Koeneng Hub toward a brighter, tech-driven tomorrow.",
+        linkedin: "https://www.linkedin.com/in/selebalo-jeffrey-moepi/",
+        email: "jeffreymoepi@gmail.com",
+    },
 ];
 
 const TeamSection = () => {
-  return (
-    <section id="team" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary">Meet Our Team</h2>
-          <p className="mt-2 text-lg text-muted-foreground">The Driving Force Behind Koeneng Hub</p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-lg mx-auto justify-items-center items-center">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="text-center overflow-hidden hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1">
-              <CardHeader className="p-0">
-                <div className="relative w-full h-64 bg-muted">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    placeholder={typeof member.image !== 'string' ? 'blur' : undefined}
-                    data-ai-hint={member.aiHint}
-                  />
+    return (
+        <section id="team" className="py-24 sm:py-32">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <h2 className="font-headline text-4xl sm:text-5xl font-bold text-primary">The Minds Behind the Mission</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Meet the passionate leaders dedicated to building a future where potential meets opportunity through technology.</p>
                 </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <CardTitle className="font-headline text-xl text-foreground">{member.name}</CardTitle>
-                <CardDescription className="text-primary font-medium mt-1">{member.role}</CardDescription>
-                <p className="text-sm text-muted-foreground mt-3 mb-4 min-h-[3em]">{member.bio}</p>
-                <div className="flex justify-center space-x-3">
-                  <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn Profile`}>
-                    <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-                  </Link>
-                  <Link href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
-                    <Mail className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-                  </Link>
+                <div className="space-y-24">
+                    {teamMembers.map((member, index) => (
+                        <div key={member.name} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+                            <div className={`relative h-96 md:h-full group ${index % 2 === 1 ? 'md:order-last' : ''}`}>
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="rounded-lg object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-lg"></div>
+                            </div>
+                            <div className="md:col-span-2">
+                                <h3 className="font-headline text-3xl font-bold text-foreground">{member.name}</h3>
+                                <p className="mt-1 text-xl font-medium text-primary">{member.role}</p>
+                                <div className="prose prose-lg max-w-none text-muted-foreground mt-4">
+                                    <p>{member.bio}</p>
+                                </div>
+                                <div className="mt-6 flex space-x-4">
+                                    <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                        <Linkedin className="w-6 h-6" />
+                                        <span className="sr-only">LinkedIn</span>
+                                    </Link>
+                                    <Link href={`mailto:${member.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                                        <Mail className="w-6 h-6" />
+                                        <span className="sr-only">Email</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+            </div>
+        </section>
+    );
 };
 
 export default TeamSection;

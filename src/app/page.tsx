@@ -22,6 +22,9 @@ const TeamSection = dynamic(() => import('@/components/sections/team-section'), 
 const ContactSection = dynamic(() => import('@/components/sections/contact-section'), {
   loading: () => <LoadingSkeleton />,
 });
+const ProductsSection = dynamic(() => import('@/components/sections/dynamic-products-section'), {
+  loading: () => <LoadingSkeleton />,
+});
 
 export default function HomePage() {
   return (
@@ -29,6 +32,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <ProductsSection />
       <TeamSection />
       <ContactSection />
     </>

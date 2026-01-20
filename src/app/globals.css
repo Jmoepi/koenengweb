@@ -18,16 +18,16 @@ body {
     --popover: 0 0% 100%; /* White */
     --popover-foreground: 222 47% 11%; /* Dark Blue */
 
-    --primary: 217 91% 60%; /* Vibrant Blue (like blue-500) */
+    --primary: 220 90% 55%; /* Strong Blue */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 210 40% 96%; /* Very Light Blue (like blue-100) */
-    --secondary-foreground: 217 91% 50%; /* Medium Blue */
+    --secondary: 170 80% 45%; /* Vibrant Cyan/Teal */
+    --secondary-foreground: 0 0% 100%; /* White */
 
     --muted: 220 14% 96%; /* Very Light Gray (like slate-100) */
     --muted-foreground: 220 9% 46%; /* Medium Gray (like slate-500) */
 
-    --accent: 217 91% 65%; /* Slightly Brighter Blue */
+    --accent: 170 80% 55%; /* Brighter Cyan/Teal */
     --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84.2% 60.2%; /* Default destructive red */
@@ -35,10 +35,10 @@ body {
 
     --border: 220 13% 91%; /* Light Gray Border (like slate-200) */
     --input: 210 40% 98%; /* Very Pale Blue for input background */
-    --ring: 217 91% 60%; /* Primary Blue for focus rings */
+    --ring: 220 90% 55%; /* Primary Blue for focus rings */
 
-    --chart-1: 217 91% 60%; /* primary */
-    --chart-2: 217 91% 65%; /* accent */
+    --chart-1: 220 90% 55%; /* primary */
+    --chart-2: 170 80% 55%; /* accent */
     --chart-3: 200 80% 70%; /* light sky blue */
     --chart-4: 220 60% 75%;  /* soft lavender blue */
     --chart-5: 222 47% 11%; /* foreground */
@@ -46,12 +46,12 @@ body {
 
     --sidebar-background: 0 0% 100%; /* White */
     --sidebar-foreground: 222 47% 11%; /* Dark Blue */
-    --sidebar-primary: 217 91% 60%; /* Primary Blue */
+    --sidebar-primary: 220 90% 55%; /* Primary Blue */
     --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 210 40% 96%; /* Very Light Blue */
-    --sidebar-accent-foreground: 217 91% 50%; /* Medium Blue */
+    --sidebar-accent: 170 80% 45%; /* Vibrant Cyan/Teal */
+    --sidebar-accent-foreground: 0 0% 100%; /* White */
     --sidebar-border: 220 13% 91%; /* Light Gray Border */
-    --sidebar-ring: 217 91% 60%; /* Primary Blue */
+    --sidebar-ring: 220 90% 55%; /* Primary Blue */
   }
 
   .dark {
@@ -64,39 +64,39 @@ body {
     --popover: 222 47% 14%; /* Slightly Lighter Dark Blue for popovers */
     --popover-foreground: 0 0% 98%; /* Almost White */
 
-    --primary: 217 91% 60%; /* Vibrant Blue */
-    --primary-foreground: 222 47% 11%; /* Dark Blue text on primary */
+    --primary: 220 90% 55%; /* Strong Blue */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 215 28% 17%; /* Darker Blue (like slate-800) */
-    --secondary-foreground: 0 0% 98%; /* Almost White text on secondary */
+    --secondary: 170 80% 45%; /* Vibrant Cyan/Teal */
+    --secondary-foreground: 0 0% 100%; /* White */
 
     --muted: 215 20% 25%; /* Even Darker Blue/Gray (like slate-700) */
     --muted-foreground: 215 14% 65%; /* Lighter Gray (like slate-400) */
 
-    --accent: 217 91% 65%; /* Brighter Blue Accent */
-    --accent-foreground: 222 47% 11%; /* Dark Blue text on accent */
+    --accent: 170 80% 55%; /* Brighter Cyan/Teal */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 62.8% 30.6%; /* Default dark destructive red */
     --destructive-foreground: 0 0% 98%; /* Default dark destructive foreground */
 
     --border: 215 28% 22%; /* Darker Border (like slate-700/slate-800 boundary) */
     --input: 215 28% 17%; /* Darker Blue for input (slate-800) */
-    --ring: 217 91% 60%; /* Primary Blue for focus rings */
+    --ring: 220 90% 55%; /* Primary Blue for focus rings */
 
-    --chart-1: 217 91% 60%; /* primary */
-    --chart-2: 217 91% 65%; /* accent */
+    --chart-1: 220 90% 55%; /* primary */
+    --chart-2: 170 80% 55%; /* accent */
     --chart-3: 200 70% 55%; /* medium distinct blue */
     --chart-4: 220 50% 60%;  /* medium lavender blue */
     --chart-5: 0 0% 98%;  /* foreground (light/white) */
     
     --sidebar-background: 222 47% 11%; /* Dark Blue */
     --sidebar-foreground: 0 0% 98%; /* Almost White */
-    --sidebar-primary: 217 91% 60%; /* Primary Blue */
-    --sidebar-primary-foreground: 222 47% 11%; /* Dark Blue */
-    --sidebar-accent: 215 28% 17%; /* Darker Blue Accent */
-    --sidebar-accent-foreground: 0 0% 98%; /* Almost White */
+    --sidebar-primary: 220 90% 55%; /* Primary Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 170 80% 45%; /* Vibrant Cyan/Teal */
+    --sidebar-accent-foreground: 0 0% 100%; /* White */
     --sidebar-border: 215 28% 22%; /* Darker Border */
-    --sidebar-ring: 217 91% 60%; /* Primary Blue */
+    --sidebar-ring: 220 90% 55%; /* Primary Blue */
   }
 }
 

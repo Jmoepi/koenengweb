@@ -10,17 +10,17 @@ const AboutSection = () => {
           <p className="mt-2 text-lg text-muted-foreground">Discover Our Mission and Vision</p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="prose prose-lg max-w-none text-muted-foreground">
             <h3 className="font-headline text-2xl font-semibold text-foreground mb-4">
               Fostering Innovation, Empowering Youth
             </h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p>
               Koeneng Hub is a dynamic, youth-led organization passionately dedicated to igniting technological innovation and nurturing sustainable growth. We firmly believe in the transformative power of technology and strive to empower the next generation of leaders, thinkers, and creators.
             </p>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p>
               Our core mission is to provide young individuals with the essential skills, cutting-edge resources, and invaluable mentorship they need to thrive in an ever-evolving digital landscape. We aim to build a vibrant community where creativity flourishes, ideas are exchanged, and a future-ready world is collectively shaped.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p>
               At Koeneng Hub, we're not just preparing youth for the future; we're empowering them to build it.
             </p>
           </div>
