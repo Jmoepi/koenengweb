@@ -1,51 +1,73 @@
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
-import { Mail, Phone, MapPin } from 'lucide-react';
+
+const contactPoints = [
+  {
+    title: 'Email',
+    value: 'koenenghub@gmail.com',
+    href: 'mailto:koenenghub@gmail.com',
+    icon: Mail,
+  },
+  {
+    title: 'Phone',
+    value: '+27 66 151 9713',
+    href: 'tel:+27661519713',
+    icon: Phone,
+  },
+  {
+    title: 'Location',
+    value: 'Cosmo City, Johannesburg, Gauteng, South Africa',
+    href: null,
+    icon: MapPin,
+  },
+];
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-16 md:py-24 bg-secondary/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-primary">Contact Us</h2>
-          <p className="mt-2 text-lg text-muted-foreground">We'd Love to Hear From You</p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-headline text-2xl font-semibold text-foreground mb-4">Get in Touch</h3>
-              <p className="text-muted-foreground mb-6">
-                Have questions, ideas, or want to collaborate? Reach out to us through any of the channels below, or use the contact form. We're excited to connect with you!
+    <section id="contact" className="section-shell">
+      <div className="section-frame">
+        <div className="grid gap-10 xl:grid-cols-[0.88fr_1.12fr]">
+          <div>
+            <span className="section-kicker">Contact us</span>
+            <h2 className="section-heading text-balance">Ready to elevate the experience your audience sees first?</h2>
+            <p className="section-copy">
+              If you want a stronger website, a sharper digital presence, or a conversation about youth innovation and technology, start here.
+            </p>
+
+            <div className="mt-8 grid gap-4">
+              {contactPoints.map((point) => (
+                <div key={point.title} className="rounded-[28px] border border-primary/10 bg-white/78 p-5 shadow-[0_18px_50px_rgba(22,66,38,0.08)]">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <point.icon className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm uppercase tracking-[0.24em] text-primary">{point.title}</p>
+                      {point.href ? (
+                        <a href={point.href} className="mt-2 block break-words text-base font-medium text-foreground transition-colors hover:text-primary sm:text-lg">
+                          {point.value}
+                        </a>
+                      ) : (
+                        <p className="mt-2 text-base font-medium text-foreground sm:text-lg">{point.value}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-[32px] bg-[linear-gradient(155deg,#15381f_0%,#1e5b2c_100%)] p-6 text-white shadow-[0_24px_70px_rgba(17,46,26,0.22)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-2xl font-semibold text-white">A better digital first impression starts with the right structure.</h3>
+              <p className="mt-3 text-sm leading-7 text-white/80 sm:text-base">
+                Clear navigation, balanced content, and responsive layouts are not extras. They define whether a site feels trustworthy in the first few seconds.
               </p>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Mail size={24} className="text-primary mt-1 shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-foreground">Email</h4>
-                  <a href="mailto:koenenghub@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    koenenghub@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone size={24} className="text-primary mt-1 shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-foreground">Phone</h4>
-                  <a href="tel:+27661519713" className="text-muted-foreground hover:text-primary transition-colors">
-                    +27 66 151 9713
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin size={24} className="text-primary mt-1 shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-foreground">Address</h4>
-                  <p className="text-muted-foreground">Cosmo City, Johannesburg, Gauteng, South Africa</p>
-                </div>
-              </div>
-            </div>
           </div>
-          <div>
+
+          <div className="glass-panel rounded-[34px] p-2 sm:p-3">
             <ContactForm />
           </div>
         </div>

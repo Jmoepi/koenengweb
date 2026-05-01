@@ -20,9 +20,9 @@ const fontBody = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Koeneng Hub - Youth-led. Tech-Driven. Future-Ready.',
+  title: 'Koeneng Hub | Youth-led innovation with world-class digital experiences',
   description:
-    'Koeneng Hub: Where Youthful Energy Meets Intelligent Tech. We empower youth with cutting-edge AI and technology to solve real-world problems and shape the future.',
+    'Koeneng Hub builds future-ready digital experiences, youth innovation programs, and technology-led solutions from Johannesburg for ambitious communities and brands.',
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${fontHeadline.variable} ${fontBody.variable}`}
     >
-      <body className="font-body antialiased min-h-screen flex flex-col">
+      <body className="flex min-h-screen flex-col overflow-x-hidden font-body antialiased">
         <SiteHeader />
         <main className="flex-grow">{children}</main>
         <SiteFooter />

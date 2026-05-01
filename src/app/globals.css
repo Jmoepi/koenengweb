@@ -3,109 +3,130 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif; /* This will be overridden by tailwind config */
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 222 47% 11%; /* Dark Blue (like slate-900) */
+    --background: 48 43% 96%;
+    --foreground: 150 21% 14%;
 
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 222 47% 11%; /* Dark Blue */
+    --card: 0 0% 100%;
+    --card-foreground: 150 21% 14%;
 
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 222 47% 11%; /* Dark Blue */
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 21% 14%;
 
-    --primary: 220 90% 55%; /* Strong Blue */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 123 60% 34%;
+    --primary-foreground: 48 43% 98%;
 
-    --secondary: 170 80% 45%; /* Vibrant Cyan/Teal */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --secondary: 96 45% 89%;
+    --secondary-foreground: 150 21% 14%;
 
-    --muted: 220 14% 96%; /* Very Light Gray (like slate-100) */
-    --muted-foreground: 220 9% 46%; /* Medium Gray (like slate-500) */
+    --muted: 90 20% 92%;
+    --muted-foreground: 146 12% 37%;
 
-    --accent: 170 80% 55%; /* Brighter Cyan/Teal */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 111 61% 50%;
+    --accent-foreground: 150 21% 12%;
 
-    --destructive: 0 84.2% 60.2%; /* Default destructive red */
-    --destructive-foreground: 0 0% 98%; /* Default destructive foreground */
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%; /* Light Gray Border (like slate-200) */
-    --input: 210 40% 98%; /* Very Pale Blue for input background */
-    --ring: 220 90% 55%; /* Primary Blue for focus rings */
+    --border: 110 24% 84%;
+    --input: 48 43% 99%;
+    --ring: 123 60% 34%;
 
-    --chart-1: 220 90% 55%; /* primary */
-    --chart-2: 170 80% 55%; /* accent */
-    --chart-3: 200 80% 70%; /* light sky blue */
-    --chart-4: 220 60% 75%;  /* soft lavender blue */
-    --chart-5: 222 47% 11%; /* foreground */
-    --radius: 0.5rem;
+    --chart-1: 123 60% 34%;
+    --chart-2: 111 61% 50%;
+    --chart-3: 37 78% 56%;
+    --chart-4: 152 40% 32%;
+    --chart-5: 150 21% 14%;
+    --radius: 1.5rem;
 
-    --sidebar-background: 0 0% 100%; /* White */
-    --sidebar-foreground: 222 47% 11%; /* Dark Blue */
-    --sidebar-primary: 220 90% 55%; /* Primary Blue */
-    --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 170 80% 45%; /* Vibrant Cyan/Teal */
-    --sidebar-accent-foreground: 0 0% 100%; /* White */
-    --sidebar-border: 220 13% 91%; /* Light Gray Border */
-    --sidebar-ring: 220 90% 55%; /* Primary Blue */
+    --sidebar-background: 48 43% 97%;
+    --sidebar-foreground: 150 21% 14%;
+    --sidebar-primary: 123 60% 34%;
+    --sidebar-primary-foreground: 48 43% 98%;
+    --sidebar-accent: 111 61% 50%;
+    --sidebar-accent-foreground: 150 21% 12%;
+    --sidebar-border: 110 24% 84%;
+    --sidebar-ring: 123 60% 34%;
   }
 
   .dark {
-    --background: 222 47% 11%; /* Dark Blue (like slate-900) */
-    --foreground: 0 0% 98%; /* Almost White (like slate-50) */
+    --background: 150 20% 10%;
+    --foreground: 48 43% 96%;
 
-    --card: 222 47% 14%; /* Slightly Lighter Dark Blue for cards */
-    --card-foreground: 0 0% 98%; /* Almost White */
+    --card: 150 18% 13%;
+    --card-foreground: 48 43% 96%;
 
-    --popover: 222 47% 14%; /* Slightly Lighter Dark Blue for popovers */
-    --popover-foreground: 0 0% 98%; /* Almost White */
+    --popover: 150 18% 13%;
+    --popover-foreground: 48 43% 96%;
 
-    --primary: 220 90% 55%; /* Strong Blue */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 111 61% 58%;
+    --primary-foreground: 150 20% 10%;
 
-    --secondary: 170 80% 45%; /* Vibrant Cyan/Teal */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --secondary: 145 20% 18%;
+    --secondary-foreground: 48 43% 96%;
 
-    --muted: 215 20% 25%; /* Even Darker Blue/Gray (like slate-700) */
-    --muted-foreground: 215 14% 65%; /* Lighter Gray (like slate-400) */
+    --muted: 150 14% 18%;
+    --muted-foreground: 110 16% 72%;
 
-    --accent: 170 80% 55%; /* Brighter Cyan/Teal */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 43 89% 64%;
+    --accent-foreground: 150 20% 10%;
 
-    --destructive: 0 62.8% 30.6%; /* Default dark destructive red */
-    --destructive-foreground: 0 0% 98%; /* Default dark destructive foreground */
+    --destructive: 0 70% 48%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 28% 22%; /* Darker Border (like slate-700/slate-800 boundary) */
-    --input: 215 28% 17%; /* Darker Blue for input (slate-800) */
-    --ring: 220 90% 55%; /* Primary Blue for focus rings */
+    --border: 146 15% 22%;
+    --input: 150 16% 15%;
+    --ring: 111 61% 58%;
 
-    --chart-1: 220 90% 55%; /* primary */
-    --chart-2: 170 80% 55%; /* accent */
-    --chart-3: 200 70% 55%; /* medium distinct blue */
-    --chart-4: 220 50% 60%;  /* medium lavender blue */
-    --chart-5: 0 0% 98%;  /* foreground (light/white) */
-    
-    --sidebar-background: 222 47% 11%; /* Dark Blue */
-    --sidebar-foreground: 0 0% 98%; /* Almost White */
-    --sidebar-primary: 220 90% 55%; /* Primary Blue */
-    --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 170 80% 45%; /* Vibrant Cyan/Teal */
-    --sidebar-accent-foreground: 0 0% 100%; /* White */
-    --sidebar-border: 215 28% 22%; /* Darker Border */
-    --sidebar-ring: 220 90% 55%; /* Primary Blue */
+    --chart-1: 111 61% 58%;
+    --chart-2: 43 89% 64%;
+    --chart-3: 165 49% 53%;
+    --chart-4: 93 41% 62%;
+    --chart-5: 48 43% 96%;
+
+    --sidebar-background: 150 20% 11%;
+    --sidebar-foreground: 48 43% 96%;
+    --sidebar-primary: 111 61% 58%;
+    --sidebar-primary-foreground: 150 20% 10%;
+    --sidebar-accent: 43 89% 64%;
+    --sidebar-accent-foreground: 150 20% 10%;
+    --sidebar-border: 146 15% 22%;
+    --sidebar-ring: 111 61% 58%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply min-h-screen bg-background font-body text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--secondary) / 0.95), transparent 26%),
+      radial-gradient(circle at top right, hsl(var(--accent) / 0.14), transparent 24%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(48 43% 98%));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline tracking-tight text-foreground;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 }
 
@@ -119,7 +140,74 @@ body {
     }
   }
 
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
   .animate-spin-slow {
-    animation: spin 20s linear infinite;
+    animation: spin 18s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 5s ease-in-out infinite;
+  }
+
+  .section-shell {
+    scroll-margin-top: 6rem;
+    @apply relative overflow-hidden py-20 sm:py-24 lg:py-28;
+  }
+
+  .section-frame {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary shadow-[0_10px_30px_rgba(34,87,42,0.08)] backdrop-blur;
+  }
+
+  .section-heading {
+    @apply mt-6 max-w-3xl font-headline text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg;
+  }
+
+  .glass-panel {
+    @apply rounded-[28px] border border-white/70 bg-white/70 shadow-[0_22px_80px_rgba(25,66,38,0.12)] backdrop-blur-xl;
+  }
+
+  .subtle-grid {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.06) 1px, transparent 1px);
+    background-position: center;
+    background-size: 30px 30px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
