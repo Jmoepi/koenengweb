@@ -84,15 +84,15 @@ const SiteFooter = () => {
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-primary" />
-                <p>Cosmo City, Johannesburg, Gauteng, South Africa</p>
+                <p>Johannesburg, Gauteng, South Africa</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-primary/10 pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Koeneng Hub. Crafted for modern screens, from phones to large desktops.</p>
-          <p>Built in Johannesburg, South Africa.</p>
+          <p>© {new Date().getFullYear()} Koeneng Hub. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>
